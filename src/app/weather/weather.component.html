@@ -1,0 +1,64 @@
+<div class="container body-content">
+    <div>
+        <form>
+            <div class="weather-form">
+                <div class="weather-form-child">
+                    <div class="weather-main-text box">
+                        <div><h1>Weather in your city!</h1></div>
+                        <div class="weather-text"><h4>Reliable weather forecast for any point of the world</h4></div>
+                    </div>
+                </div>
+                <div class="weather-form-child">
+                    <div class="weather-element">
+                        <h4>Input city:</h4>
+                        <input list="cities" name="cityName" [(ngModel)]="selectedCity" required placeholder="City" class="form-control" />
+                        <datalist id="cities">
+                            <option *ngFor="let city of _cityList">{{city.Name}}</option>
+                        </datalist>
+                    </div>
+                    <div class="weather-element">
+                        <h4>Select period:</h4>
+                        <select name="countDays" [(ngModel)]="selectedCountDays" class="form-control">
+                            <option *ngFor="let count of _days">{{count}}</option>
+                        </select>
+                    </div>
+                    <div class="weather-element">
+                        <h4>Get forecast:</h4>
+                        <input type="submit" (click)="getWeather(selectedCity, selectedCountDays)" value="OK" class="btn weather-ok-btn" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="_weather">
+        <h3>{{_weather.city.name}}, {{_weather.city.country}}</h3>
+        <table class="table table-bordered table-hover">
+        <tr>
+            <th class="text-center">Time</th>
+            <th class="text-center">Morning, °C</th>
+            <th class="text-center">Day, °C</th>
+            <th class="text-center">Evening, °C</th>
+            <th class="text-center">Night, °C</th>
+            <th class="text-center">Rain</th>
+            <th class="text-center">Pressure, hpa</th>
+            <th class="text-center">Humidity, %</th>
+            <th class="text-center">Wind speed, m/s</th>
+            <th class="text-center">Wind direction, °</th>
+            <th class="text-center">Cloudiness, %</th>
+        </tr>
+        <tr *ngFor="let list of _weather.list">
+            <th class="text-center">{{list.temp.morn}}</th>
+            <th class="text-center">{{list.temp.morn}}</th>
+            <th class="text-center">{{list.temp.day}}</th>
+            <th class="text-center">{{list.temp.eve}}</th>
+            <th class="text-center">{{list.temp.night}}</th>
+            <th class="text-center">{{list.weather[0].description}}</th>
+            <th class="text-center">{{list.pressure}}</th>
+            <th class="text-center">{{list.humidity}}</th>
+            <th class="text-center">{{list.speed}}</th>
+            <th class="text-center">{{list.deg}}</th>
+            <th class="text-center">{{list.clouds}}</th>
+        </tr>
+    </table>
+    </div>
+</div>

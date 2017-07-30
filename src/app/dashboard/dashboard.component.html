@@ -1,0 +1,26 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a routerLink="/weather" routerLinkActive="active" class="navbar-brand">Binary Weather</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li><a routerLink="/dashboard/weather" routerLinkActive="active">Weather</a></li>
+                <li><a routerLink="/dashboard/history" routerLinkActive="active">History</a></li>
+                <li><a routerLink="/dashboard/configurations" routerLinkActive="active">Configurations</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+    <footer class="panel-footer weather-footer">
+        <p>&copy; 2017 - Binary Studio Academy</p>
+        <p>O. Dovhan, +380991234567</p>
+    </footer>
+</div>

@@ -1,0 +1,38 @@
+<div class="container body-content">
+    <div id="history" *ngIf="_history">
+        <table class="table table-bordered table-hover">
+        <tr>
+            <th class="text-center">Request time</th>
+            <th class="text-center">City</th>
+            <th class="text-center">Count days</th>
+            <th class="text-center">Time</th>
+            <th class="text-center">Morning, °C</th>
+            <th class="text-center">Day, °C</th>
+            <th class="text-center">Evening, °C</th>
+            <th class="text-center">Night, °C</th>
+            <th class="text-center">Rain</th>
+            <th class="text-center">Pressure, hpa</th>
+            <th class="text-center">Humidity, %</th>
+            <th class="text-center">Wind speed, m/s</th>
+            <th class="text-center">Wind direction, °</th>
+            <th class="text-center">Cloudiness, %</th>
+        </tr>
+        <tr *ngFor="let historyObject of _history">
+            <th class="text-center">{{historyObject.RequestTime}}</th>
+            <th class="text-center">{{historyObject.City}}</th>
+            <th class="text-center">{{historyObject.CountDays}}</th>
+            <th class="text-center">{{historyObject.CountDays}}</th>
+            <th class="text-center">{{historyObject.ReducedForecastPerDay.MorningTemp}}</th>
+            <th class="text-center">{{historyObject.ReducedForecastPerDay.DayTemp}}</th>
+            <th class="text-center">{{historyObject.ReducedForecastPerDay.EveningTemp}}</th>
+            <th class="text-center">{{historyObject.ReducedForecastPerDay.NightTemp}}</th>
+            <th class="text-center">{{historyObject.ReducedForecastPerDay.Rain}}</th>
+            <th class="text-center">{{historyObject.ReducedForecastPerDay.Pressure}}</th>
+            <th class="text-center">{{historyObject.ReducedForecastPerDay.Humidity}}</th>
+            <th class="text-center">{{historyObject.ReducedForecastPerDay.WindSpeed}}</th>
+            <th class="text-center">{{historyObject.ReducedForecastPerDay.WindDirection}}</th>
+            <th class="text-center">{{historyObject.ReducedForecastPerDay.Clouds}}</th>
+        </tr>
+    </table>
+    </div>
+</div>
