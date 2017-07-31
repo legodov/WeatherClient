@@ -15,7 +15,7 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     children: [{
-      path: 'weather',
+      path: '',
       component: WeatherComponent
     }, {
       path: 'history',

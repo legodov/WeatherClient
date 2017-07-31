@@ -35,4 +35,7 @@
             </ul>
         </div>
     </div>
+    <div *ngIf="_error">
+        <div class="weather-error-result"><h3>{{ _error }}</h3></div>
+    </div>
 </div>

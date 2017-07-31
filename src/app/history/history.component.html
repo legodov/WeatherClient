@@ -18,21 +18,24 @@
             <th class="text-center">Cloudiness, %</th>
         </tr>
         <tr *ngFor="let historyObject of _history">
-            <th class="text-center">{{historyObject.RequestTime}}</th>
-            <th class="text-center">{{historyObject.City}}</th>
-            <th class="text-center">{{historyObject.CountDays}}</th>
-            <th class="text-center">{{historyObject.CountDays}}</th>
-            <th class="text-center">{{historyObject.ReducedForecastPerDay.MorningTemp}}</th>
-            <th class="text-center">{{historyObject.ReducedForecastPerDay.DayTemp}}</th>
-            <th class="text-center">{{historyObject.ReducedForecastPerDay.EveningTemp}}</th>
-            <th class="text-center">{{historyObject.ReducedForecastPerDay.NightTemp}}</th>
-            <th class="text-center">{{historyObject.ReducedForecastPerDay.Rain}}</th>
-            <th class="text-center">{{historyObject.ReducedForecastPerDay.Pressure}}</th>
-            <th class="text-center">{{historyObject.ReducedForecastPerDay.Humidity}}</th>
-            <th class="text-center">{{historyObject.ReducedForecastPerDay.WindSpeed}}</th>
-            <th class="text-center">{{historyObject.ReducedForecastPerDay.WindDirection}}</th>
-            <th class="text-center">{{historyObject.ReducedForecastPerDay.Clouds}}</th>
+            <th class="text-center">{{ historyObject.RequestTime }}</th>
+            <th class="text-center">{{ historyObject.City }}</th>
+            <th class="text-center">{{ historyObject.CountDays }}</th>
+            <th class="text-center">{{ historyObject.CountDays }}</th>
+            <th class="text-center">{{ historyObject.ReducedForecastPerDay.MorningTemp }}</th>
+            <th class="text-center">{{ historyObject.ReducedForecastPerDay.DayTemp }}</th>
+            <th class="text-center">{{ historyObject.ReducedForecastPerDay.EveningTemp }}</th>
+            <th class="text-center">{{ historyObject.ReducedForecastPerDay.NightTemp }}</th>
+            <th class="text-center">{{ historyObject.ReducedForecastPerDay.Rain }}</th>
+            <th class="text-center">{{ historyObject.ReducedForecastPerDay.Pressure }}</th>
+            <th class="text-center">{{ historyObject.ReducedForecastPerDay.Humidity }}</th>
+            <th class="text-center">{{ historyObject.ReducedForecastPerDay.WindSpeed }}</th>
+            <th class="text-center">{{ historyObject.ReducedForecastPerDay.WindDirection }}</th>
+            <th class="text-center">{{ historyObject.ReducedForecastPerDay.Clouds }}</th>
         </tr>
     </table>
+    </div>
+    <div *ngIf="_error">
+        <div class="weather-error-result"><h3>{{ _error }}</h3></div>
     </div>
 </div>
